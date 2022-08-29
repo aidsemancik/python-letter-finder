@@ -9,6 +9,11 @@ hint = ["a display or demonstration of a particular skill.", "a sweet treat that
 choice = random.randint(1, 30)
 print(word[choice])
 print(hint[choice])
+
+secret = word.replace(choice, "-")
+print(secret)
+
+
     
 
 
