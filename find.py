@@ -8,24 +8,25 @@ choice = random.randint(1, 30)
 correct_word = word[choice]
 print(hint[choice])
 
-secret = '- '*len(correct_word)
-print(secret)
+for x in str(correct_word):
+    print("-")
+
 print(correct_word)
 
 attempts = (len(correct_word)) + 2
 print(attempts)
 
-
 for attempts in range(attempts):
-    guess = str(input("Enter character: "))
+    guess = str(input("Enter a character:"))
 
     if (len(guess) > 1):
-        print("You are not allowed to enter more than one character at time")
+        print("Please enter only one character at a time.")
         continue
 
     if guess in correct_word:
-        print("Well done! '" + guess + "' is in the list!")
-        secret = secret.replace(correct_word, guess)
-        print(secret)
+        print("Yay! " + guess + " is in the word!")
+        print(hidden.replace("-", guess))
+
     else:
-        print("Sorry " + guess + " does not included...")
+        print("Sorry, the word does not include: " + guess)
+    
