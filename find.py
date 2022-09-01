@@ -8,22 +8,16 @@ choice = random.randint(1, 30)
 correct_word = word[choice]
 print(hint[choice])
 
-
-
 hidden = []
 
 for x in correct_word:
     hidden.append("-")
  
 print(hidden)
-
-
-
-
 print(correct_word)
 
 attempts = (len(correct_word)) + 2
-print(attempts)
+print("You have " + str(attempts) + " attempts.")
 
 for attempts in range(attempts):
     guess = str(input("Enter a character:"))
@@ -35,6 +29,10 @@ for attempts in range(attempts):
     if guess in correct_word:
         print("Yay! " + guess + " is in the word!")
         hidden.insert(correct_word.index(guess), guess)
+
+        # print(hidden[:1] + guess + hidden[1 + 1:])
+        
+
         print(hidden)
         
     else:
