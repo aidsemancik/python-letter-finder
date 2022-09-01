@@ -8,8 +8,17 @@ choice = random.randint(1, 30)
 correct_word = word[choice]
 print(hint[choice])
 
-for x in str(correct_word):
-    print("-")
+
+
+hidden = []
+
+for x in correct_word:
+    hidden.append("-")
+ 
+print(hidden)
+
+
+
 
 print(correct_word)
 
@@ -25,8 +34,9 @@ for attempts in range(attempts):
 
     if guess in correct_word:
         print("Yay! " + guess + " is in the word!")
-        print(hidden.replace("-", guess))
-
+        hidden.insert(correct_word.index(guess), guess)
+        print(hidden)
+        
     else:
         print("Sorry, the word does not include: " + guess)
     
