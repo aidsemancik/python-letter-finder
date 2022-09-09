@@ -55,8 +55,8 @@ while hidden != list(word) and attempts != 0:
             print(hidden)
 
     #prints an error message if the entered guess is nan or not a single character
-    if not guess.isalpha() or len(guess) > 1:
-        print("Please enter a single letter only!")
+    if not guess.isalpha() or len(guess) > 1 or guess.isupper():
+        print("Please enter a single lowercase letter only!")
         attempts += 1
 
     attempts -= 1
